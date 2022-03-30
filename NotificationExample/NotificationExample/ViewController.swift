@@ -44,7 +44,7 @@ class ViewController: UIViewController {
                 content.body = NSString.localizedUserNotificationString(forKey: "Rise and shine! It's morning time!", arguments: nil)
                  */
                 
-                // Configure the trigger for a 7am wakeup.
+                // Configure the trigger for a 7am message (you will need to change this code to a time near you right now.
                 var dateInfo = DateComponents()
                 dateInfo.hour = 17
                 dateInfo.minute = 44
