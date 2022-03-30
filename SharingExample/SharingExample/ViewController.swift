@@ -14,10 +14,8 @@ class ViewController: UIViewController
     
     @IBAction func shareButtonTapped(_ sender: Any)
     {
-        //let shareViewController = UIActivityViewController(activityItems: [txtInput.text], applicationActivities: [])
-        
-        let shareViewController = UIActivityViewController(activityItems: ["I got the high score on Candy Crush!"], applicationActivities: [])
-        shareViewController.excludedActivityTypes = [UIActivityTypePostToFacebook]
+        let shareViewController = UIActivityViewController(activityItems: [txtInput.text], applicationActivities: [])
+        shareViewController.excludedActivityTypes = [UIActivity.ActivityType.postToFacebook]
         present(shareViewController, animated: true, completion: nil)
     
     }
