@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate
+class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavigationControllerDelegate
 {
     @IBOutlet weak var imageView: UIImageView!
     
@@ -37,12 +37,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBAction func cameraButtonTapped(_ sender: UIButton)
     {
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera)
         {
             print("Camera available")
             let imagePicker:UIImagePickerController = UIImagePickerController()
             imagePicker.delegate = self
-            imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+            imagePicker.sourceType = UIImagePickerController.SourceType.camera
             imagePicker.allowsEditing = true
             
             self.present(imagePicker, animated: true, completion: nil)
@@ -53,9 +53,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         {
             imageView.image = image
             dismiss(animated: true, completion: nil)
@@ -76,6 +76,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             present(shareViewController, animated: true, completion: nil)
         }
     }
+    
+    
     
     //file saving functionality, presented without warranty
     /*
