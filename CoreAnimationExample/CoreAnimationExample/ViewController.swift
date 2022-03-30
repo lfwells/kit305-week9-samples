@@ -86,13 +86,13 @@ class ViewController: UIViewController {
         let widthAnim = CAKeyframeAnimation(keyPath:"borderWidth")
         let widthValues = [1.0, 10.0, 5.0, 30.0, 0.5, 15.0, 2.0, 50.0, 0.0, ];
         widthAnim.values = widthValues;
-        widthAnim.calculationMode = kCAAnimationPaced;
+        widthAnim.calculationMode = CAAnimationCalculationMode.paced;
         
         // Animation 2
         let rotateAnim = CAKeyframeAnimation(keyPath:"transform.rotation")
         let rotateValues = [0, 45 * .pi / 180.0, 0]
         rotateAnim.values = rotateValues
-        widthAnim.calculationMode = kCAAnimationPaced;
+        widthAnim.calculationMode = CAAnimationCalculationMode.paced;
         
         // Animation group
         let group = CAAnimationGroup()
