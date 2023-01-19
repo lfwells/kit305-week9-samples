@@ -22,7 +22,7 @@ class ViewController: UIViewController {
 
     @IBAction func addButtonPressed(_ sender: Any)
     {
-        
+        print("add pressed")
     }
     
 }

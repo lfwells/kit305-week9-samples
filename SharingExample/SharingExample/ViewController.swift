@@ -14,8 +14,8 @@ class ViewController: UIViewController
     
     @IBAction func shareButtonTapped(_ sender: Any)
     {
-        let shareViewController = UIActivityViewController(activityItems: [txtInput.text], applicationActivities: [])
-        shareViewController.popoverPresentationController?.sourceView = sender as! UIView // so that iPads won't crash
+        let shareViewController = UIActivityViewController(activityItems: [txtInput.text!], applicationActivities: [])
+        shareViewController.popoverPresentationController?.sourceView = (sender as! UIView) // so that iPads won't crash
         shareViewController.excludedActivityTypes = [UIActivity.ActivityType.postToFacebook]
         present(shareViewController, animated: true, completion: nil)
     
